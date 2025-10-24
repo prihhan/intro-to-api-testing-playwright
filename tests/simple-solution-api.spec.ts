@@ -32,8 +32,6 @@ test('Negative case should receive code 400', async ({ request }) => {
   expect(response.status()).toBe(400)
 })
 
-
-
 test('post order with correct data should receive code 201', async ({ request }) => {
   // prepare request body
   const requestBody = {
