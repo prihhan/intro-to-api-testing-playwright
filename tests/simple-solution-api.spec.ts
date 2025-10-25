@@ -22,7 +22,7 @@ test('Order id 4 should receive code 200', async ({ request }) => {
   expect(response.status()).toBe(200)
 })
 
-test('Negative case should receive code 400', async ({ request }) => {
+test('Negative number should receive code 400', async ({ request }) => {
   // Build and send a GET request to the server
   const response = await request.get('https://backend.tallinn-learning.ee/test-orders/-4')
   // Log the response status, body and headers
