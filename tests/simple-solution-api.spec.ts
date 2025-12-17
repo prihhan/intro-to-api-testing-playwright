@@ -66,7 +66,6 @@ test('post order with correct data should receive code 400', async ({ request })
     id: 0,
   }
 
-
   // Send a POST request to the server
   const response = await request.post('https://backend.tallinn-learning.ee/test-orders', {
     data: requestBody,
@@ -76,7 +75,6 @@ test('post order with correct data should receive code 400', async ({ request })
   console.log('response body:', await response.text())
   expect(response.status()).toBe(StatusCodes.BAD_REQUEST)
 })
-
 
 ////////////////////////////homework09 assignment/////////////////////////
 // PUT endpoint
@@ -144,8 +142,8 @@ test('update order with empty request body should receive 400 Bad Request', asyn
 
 // DELETE endpoint
 test('delete order with valid ID and valid API key should receive 204 No Content', async ({
-                                                                                            request,
-                                                                                          }) => {
+  request,
+}) => {
   const requestHeaders = {
     api_key: '1234567890123456',
   }
@@ -201,8 +199,8 @@ test('login with valid username and password should receive 200 OK', async ({ re
 })
 
 test('login with missing username and password should receive 500 Internal Server Error', async ({
-                                                                                                   request,
-                                                                                                 }) => {
+  request,
+}) => {
   const response = await request.get('https://backend.tallinn-learning.ee/test-orders', {})
   console.log('response status:', response.status())
   console.log('response body:', await response.json())
